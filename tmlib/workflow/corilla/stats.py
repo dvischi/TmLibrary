@@ -89,7 +89,7 @@ class OnlineStatistics(object):
             self.n += 1
             delta_mean = (array - self._mean).astype(np.float32)
             try:
-                # perform in-place operations for memory efficiency
+                # update self._mean by memory efficiency in-place operations
                 norm_delta_mean = np.array(delta_mean, copy=True)
                 norm_delta_mean /= self.n
                 self._mean += norm_delta_mean
